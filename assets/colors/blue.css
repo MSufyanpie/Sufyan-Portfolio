@@ -5,12 +5,12 @@ body {
 .base-color {
   color: #028ac9;
 }
-.secondary-button{
+.submit-button{
   color: #028ac9;
   border: 1px solid #028ac9;
   background-color: transparent;
 }
-.secondary-button:hover{
+.submit-button:hover{
   color: #fff;
   background-color: #028ac9;
 }

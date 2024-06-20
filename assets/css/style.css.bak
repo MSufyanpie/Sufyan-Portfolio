@@ -78,7 +78,7 @@ a,a:hover,button {
 .max-width-d{
   max-width: 1440px;
 }
-.secondary-button{
+.submit-button{
   transition: all .5s ease;
   display: inline-block;
   border-radius: 32px;

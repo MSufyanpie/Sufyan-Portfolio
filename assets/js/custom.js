@@ -954,3 +954,16 @@ function themeOption() {
         $(this).addClass('active');
     });
 }
+
+/*-------------------------  Email Js  -------------------------*/
+
+function SendMail(){
+    var params={
+        from_name:document.getElementById("fullName").value,
+        email_id:document.getElementById("email_id").value,
+        message:document.getElementById("message").value,
+    }
+    emailjs.send("service_7awft2i","template_h9oqzcm", params).then(function(){
+        alert("Message Sent Successfully");
+    })
+}
