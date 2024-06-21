@@ -957,13 +957,35 @@ function themeOption() {
 
 /*-------------------------  Email Js  -------------------------*/
 
-function SendMail(){
-    var params={
-        from_name:document.getElementById("fullName").value,
-        email_id:document.getElementById("email_id").value,
-        message:document.getElementById("message").value,
+function SendMail(event){
+    event.preventDefault(); // Prevent the form from submitting the default way
+
+    var fullName = document.getElementById("fullName").value;
+    var email = document.getElementById("email_id").value;
+    var message = document.getElementById("message").value;
+
+    if (!fullName || !email || !message) {
+        alert("All fields are required!");
+        return;
     }
-    emailjs.send("service_7awft2i","template_h9oqzcm", params).then(function(){
-        alert("Message Sent Successfully");
-    })
+
+    var params = {
+        from_name: fullName,
+        email_id: email,
+        message: message,
+    };
+
+    console.log("Sending email with params:", params);
+
+    emailjs.send("service_7awft2i", "template_h9oqzcm", params)
+        .then(function(response) {
+            console.log("Success:", response.status, response.text);
+            alert("Message Sent Successfully");
+            document.getElementById("fullName").value = "";
+            document.getElementById("email_id").value = "";
+            document.getElementById("message").value = "";
+        }, function(error) {
+            console.error("Failed to send email:", error);
+            alert("Failed to send message. Please try again later.");
+        });
 }
