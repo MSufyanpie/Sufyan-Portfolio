@@ -2190,3 +2190,32 @@ body.dark-Haris , .dark-Haris .ajax-page-content{
       background-color: #535455  !important;
   }
 }
+#toastContainer {
+  position: fixed;
+  top: 20px; /* Adjust this value as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toast {
+  display: none;
+  min-width: 250px;
+  margin-bottom: 15px;
+  padding: 16px;
+  color: #fff;
+  background-color: #028ac9; /* Green background */
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(4, 133, 19, 0.1);
+  animation: fadeInOut 6s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}

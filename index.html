@@ -27,7 +27,7 @@
     <!--  Custom Style Css  -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!--  Color Css  -->
-    <link rel="stylesheet" href="assets/colors/blue.css" id="option-color">
+    <link rel="stylesheet" href="assets/colors/blue.css" id="option-color"> 
     <script src="custom.js" type="text/javascript"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
@@ -1136,13 +1136,13 @@
                       </div>
                       <div class="col-lg-12 form-item">
                         <div class="form-group">
-                          <input name="email" id="email_id" type="email" class="form-control" placeholder="Enter Your Email Address*" >
+                          <input name="email" id="email_id" type="email" class="form-control" placeholder="Enter Your Email Address*" required >
                         </div>
                       </div>
                      
                       <div class="col-12 form-item">
                         <div class="form-group">
-                          <textarea name="comments" id="message" rows="3" class="form-control textarea" placeholder="Enter Your message..."></textarea>
+                          <textarea name="comments" id="message" rows="3" class="form-control textarea" placeholder="Enter Your message..." required></textarea>
                         </div>
                        
                           
@@ -1157,6 +1157,7 @@
                   </form>
                 </div>
               </div>
+              <div id="toastContainer"></div>
             </div>
           </div>
         </div>

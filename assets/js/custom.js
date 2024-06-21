@@ -953,6 +953,27 @@ function themeOption() {
         $('.theme-skin li a').removeClass('active');
         $(this).addClass('active');
     });
+} 
+
+/*-------------------------  Toast Message  -------------------------*/
+
+function showToast(message, duration = 3000) {
+    var toastContainer = document.getElementById("toastContainer");
+    
+    var toast = document.createElement("div");
+    toast.className = "toast";
+    toast.innerText = message;
+    
+    toastContainer.appendChild(toast);
+    
+    // Show the toast
+    toast.style.display = "block";
+    
+    // Remove the toast after the specified duration
+    setTimeout(function() {
+        toast.style.display = "none";
+        toastContainer.removeChild(toast);
+    }, duration);
 }
 
 /*-------------------------  Email Js  -------------------------*/
@@ -965,7 +986,7 @@ function SendMail(event){
     var message = document.getElementById("message").value;
 
     if (!fullName || !email || !message) {
-        alert("All fields are required!");
+       showToast("Please fill all the fields.");
         return;
     }
 
@@ -980,12 +1001,12 @@ function SendMail(event){
     emailjs.send("service_7awft2i", "template_h9oqzcm", params)
         .then(function(response) {
             console.log("Success:", response.status, response.text);
-            alert("Message Sent Successfully");
+            showToast("Message Delivered Successfully")
             document.getElementById("fullName").value = "";
             document.getElementById("email_id").value = "";
             document.getElementById("message").value = "";
         }, function(error) {
             console.error("Failed to send email:", error);
-            alert("Failed to send message. Please try again later.");
+            showToast("Failed to send email. Please try again.")
         });
 }
